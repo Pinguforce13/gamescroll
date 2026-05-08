@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameScroll</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="logo">Game<span>Scroll</span></div>
+    <div class="nav-tabs">
+      <button class="nav-tab active" data-tab="feed">🎮 Feed</button>
+      <button class="nav-tab" data-tab="make">✏️ Maak</button>
+      <button class="nav-tab" data-tab="learn">📚 Leer</button>
+    </div>
+    <div class="nav-status">🟢 live</div>
+  </nav>
+
+  <div class="main">
+    <section class="feed" id="feed">
+      <div class="slides-container" id="slidesContainer"></div>
+    </section>
+
+    <aside class="editor-panel" id="editorPanel" hidden>
+      <div class="editor-top">
+        <span class="editor-title">✏️ Code jouw game</span>
+        <button class="close-editor" id="closeEditor" aria-label="Sluit editor"><i class="ti ti-x"></i></button>
+      </div>
+
+      <div class="ai-helper">
+        <div class="ai-title">🤖 AI hulp — stel een vraag</div>
+        <div class="ai-input-row">
+          <input type="text" id="aiInput" placeholder="bv: hoe maak ik een score?" />
+          <button id="aiSendBtn"><i class="ti ti-send"></i></button>
+        </div>
+        <div class="ai-response" id="aiResponse"></div>
+        <div class="ai-steps-title">Of kies een leer-stap:</div>
+        <div class="ai-steps" id="aiSteps"></div>
+      </div>
+
+      <div class="editor-code">
+        <textarea class="code-area" id="codeArea" spellcheck="false"
+          placeholder="// Schrijf hier je game code...&#10;// Klik een stap of stel een vraag aan de AI!"></textarea>
+      </div>
+
+      <div class="editor-bottom">
+        <button class="run-btn" id="runBtn">▶ Run</button>
+        <button class="post-btn" id="postBtn">📤 Post</button>
+        <span class="hint-text">Je game verschijnt in de feed!</span>
+      </div>
+
+      <div class="preview-panel" id="previewPanel" hidden>
+        <div class="preview-header">
+          <span>Live preview</span>
+          <button id="closePreview"><i class="ti ti-x"></i></button>
+        </div>
+        <iframe id="previewFrame" sandbox="allow-scripts" title="Game preview"></iframe>
+      </div>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/games/dodge.js"></script>
+  <script src="js/games/snake.js"></script>
+  <script src="js/games/gravity.js"></script>
+  <script src="js/games/pong.js"></script>
+  <script src="js/games/clicker.js"></script>
+  <script src="js/editor/steps.js"></script>
+  <script src="js/editor/ai.js"></script>
+  <script src="js/feed.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
